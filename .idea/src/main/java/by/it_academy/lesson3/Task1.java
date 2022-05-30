@@ -1,12 +1,10 @@
 package by.it_academy.lesson3;
-
 /**
  * Создать переменную giftValue.
  * Напечатать сумму налога, в соответствие с таблицей на картинке.
  * При сумме ниже 5000 - налог равен 0.
  * Например: подарок 6000 требует 180 налога (100 + (6000-5000)
- **/
-
+ */
 public class Task1 {
     public static void main(String[] args) {
         int giftValue = 6000;
