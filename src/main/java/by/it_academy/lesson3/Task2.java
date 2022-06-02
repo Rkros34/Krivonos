@@ -19,16 +19,24 @@ public class Task2 {
                 new InputStreamReader(System.in));
         System.out.println("Укажите Вашу оценку c заглавной буквы латиницей");
         String grade = reader.readLine();
-        if (grade.equals("A")) {
-            System.out.println("Distinction");
-        } else if (grade.equals("B") || grade.equals("C")) {
-            System.out.println("First class");
-        } else if (grade.equals("D")) {
-            System.out.println("You have passeds");
-        } else if (grade.equals("F")) {
-            System.out.println("Fail. Try again");
-        } else{
-            System.out.println("Invalid grade");
+        switch (grade) {
+            case "A":
+                System.out.println("Distinction");
+                break;
+            case "B":
+            case "C":
+                System.out.println("First class");
+                break;
+            case "D":
+                System.out.println("You have passed");
+                break;
+            case "F":
+                System.out.println("Fail. Try again");
+                break;
+            default:
+                System.out.println("Invalid grade");
+                break;
         }
+
     }
 }
