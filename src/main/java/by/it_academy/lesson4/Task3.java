@@ -10,10 +10,10 @@ public class Task3 {
      */
     public static void main(String[] args) {
         int[] myArray = {5, 1, 3, 4, 2};
-        int Summ = 0;
+        int summ = 0;
         for (int i : myArray) {
-            Summ =Summ+i;
+            summ = summ + i;
         }
-        System.out.println(Summ);
+        System.out.println(summ);
     }
 }
