@@ -10,10 +10,8 @@ import java.io.InputStreamReader;
  * иначе "Forbidden"
  */
 public class Task3 {
-    public static void main(String[] args)
-            throws IOException {
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите пароль");
         String password = reader.readLine();
         if (password.equals("Caput Draconis")) {

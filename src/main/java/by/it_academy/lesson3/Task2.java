@@ -13,10 +13,8 @@ import java.io.InputStreamReader;
  * При других значениях - 'Invalid grade'
  */
 public class Task2 {
-    public static void main(String[] args)
-            throws IOException {
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Укажите Вашу оценку c заглавной буквы латиницей");
         String grade = reader.readLine();
         switch (grade) {
