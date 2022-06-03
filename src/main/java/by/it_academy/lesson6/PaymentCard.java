@@ -14,42 +14,11 @@ package by.it_academy.lesson6;
  * В main методе протестировать методы PaymentCard.
  */
 public class PaymentCard {
-    double balance;
 
-    //Конструктор для класса PaymentCard
+    private double balance;
+
     public PaymentCard(double startingBalance) {
-        this.balance = startingBalance;
-    }
-
-    public String toString() {
-        return "The card has a balance of " + balance + " BYN";
-    }
-
-    double eatAffordably() {
-        if (this.balance - 2.6 < 0)
-            return balance;
-        else {
-            this.balance -= 2.6;
-            return balance;
-        }
-    }
-
-    double eatHeartily() {
-        if (this.balance - 4.6 < 0)
-            return balance;
-        else {
-            this.balance -= 4.6;
-        }
-        return balance;
-    }
-
-    double addMoney(double amount) {
-        if (amount < 0)
-            return balance;
-        else {
-            this.balance = balance + amount;
-        }
-        return balance;
+        balance = startingBalance;
     }
 
     public static void main(String[] args) {
@@ -60,5 +29,27 @@ public class PaymentCard {
         System.out.println(belgazprombank.toString());
         belgazprombank.eatHeartily();
         System.out.println(belgazprombank.toString());
+    }
+
+    public String toString() {
+        return "The card has a balance of " + balance + " BYN";
+    }
+
+    void eatAffordably() {
+        if (balance - 2.6 > 0) {
+            balance -= 2.6;
+        }
+    }
+
+    void eatHeartily() {
+        if (balance - 4.6 > 0) {
+            balance -= 4.6;
+        }
+    }
+
+    void addMoney(double amount) {
+        if (amount > 0) {
+            balance = balance + amount;
+        }
     }
 }
