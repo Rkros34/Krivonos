@@ -18,6 +18,6 @@ public class Checker {
     }
 
     public static void main(String[] args) {
-        System.out.println(timeOfDay("12:41:51"));
+        System.out.println(timeOfDay("72:41:51"));
     }
 }
