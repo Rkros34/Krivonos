@@ -14,20 +14,20 @@ import java.util.regex.Pattern;
  */
 public class Task1 {
     public static void main(String[] args) {
-        String[] arrayOfPeople = new String[]{"egor,2002", "andrew,1996", "elena,2000","maximilianNagibator,2007"};
+        String[] arrayOfPeople = new String[]{"egor,2002", "andrew,1996", "elena,2000", "maximilianNagibator,2007"};
         int sum = 0;
         float avgSum = 0;
-        StringBuilder maxName = new StringBuilder();
-        //String maxName;
-        for (String people : arrayOfPeople
-        ) {
+        String maxName = null;
+        int maxLengthName = 0;
+        for (String people : arrayOfPeople) {
             String[] nameAndYears = people.split(",");
             sum += Integer.parseInt(nameAndYears[1]);
-            avgSum = sum / arrayOfPeople.length;
-            if (maxName.length() < nameAndYears[0].length()) {
-                maxName.replace(0, maxName.length(), nameAndYears[0]);
+            if (nameAndYears[0].length() > maxLengthName) {
+                maxLengthName = nameAndYears[0].length();
+                maxName = nameAndYears[0];
             }
         }
+        avgSum = sum / arrayOfPeople.length;
         System.out.println(avgSum);
         System.out.println(maxName);
     }

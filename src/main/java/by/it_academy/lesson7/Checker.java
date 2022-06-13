@@ -11,13 +11,11 @@ public class Checker {
      * Проверить класс Checker и его метод в main.
      */
 
-    private static Boolean timeOfDay(String time) {
-        Pattern pattern = Pattern.compile("^([01]?[0-9]|2[0-3]]):[0-5][0-9]:[0-5][0-9]$");
-        Matcher matcher = pattern.matcher(time);
-        return matcher.matches();
+    private static boolean timeOfDay(String time) {
+        return time.matches("^([01]?[0-9]|2[0-3]]):[0-5][0-9]:[0-5][0-9]$");
     }
 
     public static void main(String[] args) {
-        System.out.println(timeOfDay("72:41:51"));
+        System.out.println(timeOfDay("12:41:51"));
     }
 }
