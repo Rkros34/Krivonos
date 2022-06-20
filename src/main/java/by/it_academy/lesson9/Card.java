@@ -85,11 +85,9 @@ public class Card implements Comparable<Card> {
     public int compareTo(Card o) {
         int result = this.suit.compareTo(o.suit);
         if (result == 0) {
-            if (cardValue <= o.cardValue) ;
-            {
+            if (cardValue <= o.cardValue) {
                 result = -1;
-            }
-            if (cardValue >= o.cardValue) {
+            } else if (cardValue >= o.cardValue) {
                 result = 1;
             } else {
                 result = 0;
