@@ -1,6 +1,8 @@
 package by.it_academy.lesson9;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Создать класс Card - игральная карта, который содержит поля:
@@ -51,29 +53,27 @@ public class Card implements Comparable<Card> {
     }
 
     public static void main(String[] args) {
+
         Card card1 = new Card(Suit.CLUB, 12);
         Card card2 = new Card(Suit.DIAMOND, 2);
         Card card3 = new Card(Suit.HEART, 14);
         Card card4 = new Card(Suit.SPADE, 4);
         Card card5 = new Card(Suit.DIAMOND, 12);
         Card[] arrayCards = new Card[]{card1, card2, card3, card4, card5};
-        System.out.println(Arrays.toString(arrayCards));
-        /**public static void bubbleSort(Card[] arrayCards) {
-         boolean sorted = false;
-         int temp;
-         while(!sorted) {
-         sorted = true;
-         for (int i = 0; i < arrayCards.length - 1; i++) {
-         if (this.cardValue arrayCards[i] > arrayCards[i+1]) {
-         temp = arrayCards[i];
-         arrayCards[i] = arrayCards[i+1];
-         arrayCards[i+1] = temp;
-         sorted = false;
-         }
-         }
-         }
-         }
-         */
+
+        boolean sorted;
+        do {
+            sorted = false;
+            for (int i = 0; i < arrayCards.length - 1; i++) {
+                if (arrayCards[i].compareTo(arrayCards[i + 1]) > 0) {
+                    sorted = false;
+                    Card temp = arrayCards[i];
+                    arrayCards[i] = arrayCards[i + 1];
+                    arrayCards[i + 1] = temp;
+                }
+            }
+        }
+        while (sorted) ;
         Arrays.sort(arrayCards);
         for (Card s : arrayCards) {
             System.out.println(s);
