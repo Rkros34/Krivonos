@@ -12,14 +12,13 @@ import java.util.List;
  */
 public class Card implements Comparable<Card> {
     private final Suit suit;
-    private int cardValue;
-    String cardValueStr = String.valueOf(cardValue);
+    private final int cardValue;
 
-    private Card(Suit suit, int cardValue) {
+    public Card(Suit suit, int cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
     }
-
+    String cardValueStr;
     @Override
     public String toString() {
         switch (cardValue) {
@@ -66,14 +65,13 @@ public class Card implements Comparable<Card> {
             sorted = false;
             for (int i = 0; i < arrayCards.length - 1; i++) {
                 if (arrayCards[i].compareTo(arrayCards[i + 1]) > 0) {
-                    sorted = false;
+                    sorted = true;
                     Card temp = arrayCards[i];
                     arrayCards[i] = arrayCards[i + 1];
                     arrayCards[i + 1] = temp;
                 }
             }
-        }
-        while (sorted) ;
+        } while (sorted) ;
         Arrays.sort(arrayCards);
         for (Card s : arrayCards) {
             System.out.println(s);
