@@ -18,9 +18,9 @@ public class Card implements Comparable<Card> {
         this.suit = suit;
         this.cardValue = cardValue;
     }
-    String cardValueStr;
     @Override
     public String toString() {
+        String cardValueStr;
         switch (cardValue) {
             case 2:
             case 3:
@@ -62,16 +62,16 @@ public class Card implements Comparable<Card> {
 
         boolean sorted;
         do {
-            sorted = false;
+            notSorted = false;
             for (int i = 0; i < arrayCards.length - 1; i++) {
                 if (arrayCards[i].compareTo(arrayCards[i + 1]) > 0) {
-                    sorted = true;
+                    notSorted = true;
                     Card temp = arrayCards[i];
                     arrayCards[i] = arrayCards[i + 1];
                     arrayCards[i + 1] = temp;
                 }
             }
-        } while (sorted) ;
+        } while (notSorted) ;
         Arrays.sort(arrayCards);
         for (Card s : arrayCards) {
             System.out.println(s);
