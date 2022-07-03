@@ -71,11 +71,8 @@ public class Card implements Comparable<Card> {
                     arrayCards[i + 1] = temp;
                 }
             }
-        } while (sorted) ;
-        Arrays.sort(arrayCards);
-        for (Card s : arrayCards) {
-            System.out.println(s);
-        }
+        } while (sorted);
+        System.out.println(Arrays.toString(arrayCards));
     }
 
 
