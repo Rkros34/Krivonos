@@ -20,8 +20,7 @@ public class Numbers {
     private static double average(ArrayList<Integer> arrayOfNumbers) {
         int count = 0;
         int sum = 0;
-        for (int number : arrayOfNumbers
-        ) {
+        for (int number : arrayOfNumbers) {
             sum += number;
             count++;
         }
@@ -29,8 +28,7 @@ public class Numbers {
     }
 
     private static void printlnRange(ArrayList<Integer> arrayOfNumbers, int lowerLimit, int upperLimit) {
-        for (int i : arrayOfNumbers
-        ) {
+        for (int i : arrayOfNumbers) {
             if (i >= lowerLimit && i <= upperLimit) {
                 System.out.println(i);
             }

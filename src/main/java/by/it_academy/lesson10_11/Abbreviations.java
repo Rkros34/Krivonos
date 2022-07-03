@@ -20,7 +20,7 @@ public class Abbreviations {
         return mapAbbrevWithExplan.get(abbreviation);
     }
 
-    void printAbbreviation() {
+    void printAbbreviations() {
         for (String key:mapAbbrevWithExplan.keySet()) {
             System.out.println(key);
         }
@@ -34,9 +34,9 @@ public class Abbreviations {
         }
     }
     void printExplanationOfAbbreviationWhere(String text){
-        for (String key:mapAbbrevWithExplan.keySet()) {
-            if (key.contains(text)){
-                System.out.println(mapAbbrevWithExplan.get(key));
+        for (String explanation:mapAbbrevWithExplan.values()) {
+            if (explanation.contains(text)){
+                System.out.println(explanation);
             }
         }
     }
@@ -51,9 +51,9 @@ public class Abbreviations {
         System.out.println(abbreviations.hasAbbreviation("JDR"));
         abbreviations.addAbbreviation("JDR", "Jura Denis Rustam");
         System.out.println(abbreviations.hasAbbreviation("JDR"));
-        System.out.println(abbreviations.findExplanationFor("JDK"));
-        abbreviations.printExplanationOfAbbreviationWhere("J");
-        abbreviations.printAbbreviation();
+        System.out.println(abbreviations.findExplanationFor("JDR"));
+        abbreviations.printExplanationOfAbbreviationWhere("Development");
+        abbreviations.printAbbreviations();
         abbreviations.printAbbreviationWhere("JDK");
     }
 }
