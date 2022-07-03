@@ -20,8 +20,9 @@ public class AverageSensor implements Sensor {
             } else {
                 sensorStatus = true;
             }
-            return sensorStatus;
         }
+        return sensorStatus;
+    }
 
         @Override
         public void setOn () {

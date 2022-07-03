@@ -23,14 +23,13 @@ public class TemperatureSensor implements Sensor {
 
     @Override
     public int read() {
-        int sensorStatus=0;
+        int sensorStatus = 0;
         if (currentStatus == true) {
-            Random random= ThreadLocalRandom.current();
-            sensorStatus=random.nextInt(61)-30;
-        }
-        if (currentStatus == false) {
+            Random random = ThreadLocalRandom.current();
+            sensorStatus = random.nextInt(61) - 30;
+            return sensorStatus;
+        }else  {
             throw new IllegalStateException("Sensor is switched off! Please, turn on!");
-            }
-        return sensorStatus;
+        }
     }
 }
