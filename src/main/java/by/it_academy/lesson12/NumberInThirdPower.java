@@ -33,7 +33,7 @@ public class NumberInThirdPower {
             try (Writer writer = new FileWriter("Number in third power")) {
                 for (int digit : numbers) {
                     double thirdPower = Math.pow(digit, 3);
-                    writer.write((int) thirdPower);
+                    writer.write(String.valueOf(thirdPower));
                     writer.write(System.lineSeparator());
                 }
             } catch (IOException e) {
