@@ -29,16 +29,6 @@ public class PrimeNumbers {
                 .forEach(System.out::println);
     }
 
-//    List<Integer> collectionOfNumbers(int lowerLimit, int upperLimitFromUser) throws IOException {
-//        List<Integer> listOfNumber = new ArrayList<>();
-//        lowerLimit = 2;
-//        upperLimitFromUser = getLimitFromUser();
-//        for (int i = lowerLimit; i <= upperLimitFromUser; i++) {
-//            listOfNumber.add(i);
-//        }
-//        return listOfNumber;
-//    }
-
     public static void main(String[] args) throws IOException {
         getPrimeNumbers();
     }
