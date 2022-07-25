@@ -26,14 +26,14 @@ public class GameInfo {
         this.pointOfSecondTeam = pointOfSecondTeam;
     }
 
-    boolean hasTeam (String teamFromUser){
-        return nameOfFirstTeam.equals(teamFromUser)||nameOfSecondTeam.equals(teamFromUser);
+    boolean hasTeam(String teamFromUser) {
+        return nameOfFirstTeam.equals(teamFromUser) || nameOfSecondTeam.equals(teamFromUser);
     }
 
-    String getWinner(){
-        if(pointOfFirstTeam>pointOfSecondTeam){
+    String getWinner() {
+        if (pointOfFirstTeam > pointOfSecondTeam) {
             return nameOfFirstTeam;
         }
-            return nameOfSecondTeam;
+        return nameOfSecondTeam;
     }
 }
