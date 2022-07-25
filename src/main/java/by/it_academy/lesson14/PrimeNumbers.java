@@ -15,18 +15,21 @@ public class PrimeNumbers {
     }
 
     private static void getPrimeNumbers() throws IOException {
-        IntPredicate primeNumber = number -> {
-            if (number != 2 && number % 2 == 0)
-                return false;
-            return IntStream.rangeClosed(2, (int) Math.sqrt(number))
-                    .filter(num -> num % 2 != 0)
-                    .noneMatch(num -> number % num == 0);
-        };
+        IntPredicate primeNumber = PrimeNumbers::isPrimeNumber;
 
         IntStream.iterate(2, num -> num + 1)
                 .limit(getLimitFromUser())
                 .filter(primeNumber)
                 .forEach(System.out::println);
+    }
+
+    private static boolean isPrimeNumber(int number) {
+        if (number != 2 && number % 2 == 0) {
+            return false;
+        }
+        return IntStream.rangeClosed(2, (int) Math.sqrt(number))
+                .filter(num -> num % 2 != 0)
+                .noneMatch(num -> number % num == 0);
     }
 
     public static void main(String[] args) throws IOException {
