@@ -17,10 +17,10 @@ import java.util.List;
 public class lesson17Task1 {
     public static void main(String[] args) throws IOException {
         final List<String> dateFormats = List.of("yyyy-MM-dd", "yyyyMMdd", "dd MM yyyy", "dd/MM/yyyy");
-        String date= getDateFromConsole();
+        String date = getDateFromConsole();
         for (String format : dateFormats) {
             LocalDate localDate = tryFormat(DateTimeFormatter.ofPattern(format), date);
-            if (localDate!=null){
+            if (localDate != null) {
                 System.out.println(localDate);
             }
         }
