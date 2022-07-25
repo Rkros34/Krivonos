@@ -14,7 +14,6 @@ public class Ls17Task2 {
     public static void main(String[] args) throws IOException {
         System.out.println(getCountOfFridays13());
     }
-
     private static int getCountOfFridays13() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Specify the range of years in which you want to know the number of Fridays 13");
