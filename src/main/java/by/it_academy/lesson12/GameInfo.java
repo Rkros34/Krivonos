@@ -33,9 +33,7 @@ public class GameInfo {
     String getWinner(){
         if(pointOfFirstTeam>pointOfSecondTeam){
             return nameOfFirstTeam;
-        }if (pointOfSecondTeam>pointOfFirstTeam){
-            return nameOfSecondTeam;
         }
-        return "dead heat";
+            return nameOfSecondTeam;
     }
 }

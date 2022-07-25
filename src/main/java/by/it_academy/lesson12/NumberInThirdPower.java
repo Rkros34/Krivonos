@@ -25,10 +25,9 @@ public class NumberInThirdPower {
             } catch (NumberFormatException ex) {
                 System.out.println("You didn't enter a number!");
                 continue;
-            } {
-                numbers.add(Integer.valueOf(line));
-                System.out.println(line);
             }
+            numbers.add(Integer.valueOf(line));
+            System.out.println(line);
 
             try (Writer writer = new FileWriter("Number in third power")) {
                 for (int digit : numbers) {
