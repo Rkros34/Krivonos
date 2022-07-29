@@ -35,7 +35,10 @@ public class Ls13Task1 {
                 .filter(x -> x > 0)
                 .filter(x -> x % 2 != 0)
                 .boxed().toList();
-        System.out.println(positiveOdd);
+        System.out.println("Positive odd number in list");
+        for (int number:positiveOdd) {
+            System.out.println(number);
+        }
     }
 
     private static void getPositiveNumbers(Collection<Integer> integerCollection) {
@@ -43,7 +46,10 @@ public class Ls13Task1 {
                 .mapToInt(x -> x)
                 .filter(x -> x > 0)
                 .boxed().toList();
-        System.out.println(positive);
+        System.out.println("Positive number in list");
+        for (int number:positive) {
+            System.out.println(number);
+        }
     }
 
     private static void getNegativeNumbers(Collection<Integer> integerCollection) {
@@ -51,6 +57,9 @@ public class Ls13Task1 {
                 .mapToInt(x -> x)
                 .filter(x -> x < 0)
                 .boxed().toList();
-        System.out.println(negative);
+        System.out.println("Negative number in list");
+        for (int number:negative) {
+            System.out.println(number);
+        }
     }
 }
