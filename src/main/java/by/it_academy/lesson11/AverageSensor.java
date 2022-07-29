@@ -38,7 +38,6 @@ public class AverageSensor implements Sensor {
             }
         }
 
-    }
 
     @Override
     public int read() {
