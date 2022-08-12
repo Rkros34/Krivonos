@@ -28,7 +28,7 @@ class H2O {
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.MINUTES);
 
-        for (int i = 2; i < LIST.size(); i += 3) {
+        for (int i = 2; i < 3000; i += 3) {
             String result = LIST.get(i - 2) + LIST.get(i - 1) + LIST.get(i);
             if (!VALID.contains(result)) {
                 throw new RuntimeException("Expected one of " + VALID + " but was " + result);
@@ -40,17 +40,28 @@ class H2O {
     /**
      * Нужно изменить этот метод.
      */
-    private boolean added =false;
+    private final Semaphore semaphoreO = new Semaphore(1);
+    private final Semaphore semaphoreH = new Semaphore(2);
+    private final CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+
+    private boolean tryWaitBarrier() throws InterruptedException {
+        try {
+            cyclicBarrier.await();
+            return false;
+        } catch (BrokenBarrierException e) {
+            return true;
+        }
+    }
+
     public void hydrogen() {
-        try{
-            if(!added){
-                Semaphore semaphoreH =new Semaphore(3);
-                semaphoreH.acquire();
-                LIST.add("H");
-                added=true;
-            }
+        try {
+            semaphoreH.acquire();
+            while (tryWaitBarrier());
+            LIST.add("H");
+            cyclicBarrier.reset();
+            semaphoreH.release();
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
         }
     }
 
@@ -58,15 +69,15 @@ class H2O {
      * Нужно изменить этот метод.
      */
     public void oxygen() {
-        try{
-            if(!added){
-                Semaphore semaphoreH =new Semaphore(3);
-                semaphoreH.acquire();
-                LIST.add("O");
-                added=true;
-            }
+        try {
+            semaphoreO.acquire();
+            while (tryWaitBarrier());
+            LIST.add("O");
+            cyclicBarrier.reset();
+            semaphoreO.release();
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
         }
+
     }
 }
